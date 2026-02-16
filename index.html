@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthFinder Quote Calculator - Affinity Health</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-mode"> <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="Images/logo.png" alt="Affinity Health Logo" class="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Plans</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+                <a href="#" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-layout">
+        <section class="quote-form-section">
+            <h1>Get Your Health Quote</h1>
+            <p class="subtitle">Fill in your details below to get an instant estimated premium.</p>
+
+            <form id="quote-form" novalidate>
+                <div class="form-group">
+                    <div class="plan-selection-container">
+                        <label class="plan-card">
+                            <input type="radio" name="plan" value="basic" data-price="500" required>
+                            <div class="plan-card-content">
+                                <div class="card-header">
+                                    <span class="plan-name">Basic</span><br>
+                                    <span class="plan-price">R500 <span class="period">/month</span></span>
+                                    <p class="plan-description">Essential cover for day-to-day medical needs.</p>
+                                </div>
+                                <div class="card-action"><span class="btn-fake">Select Plan</span></div>
+                                <div class="card-features">
+                                    <ul><li>GP Visits</li><li>Basic Dentistry</li></ul>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="plan-card popular">
+                            <div class="badge">Best Value</div>
+                            <input type="radio" name="plan" value="standard" data-price="900" required>
+                            <div class="plan-card-content">
+                                <div class="card-header">
+                                    <span class="plan-name">Standard</span><br>
+                                    <span class="plan-price">R900 <span class="period">/month</span></span>
+                                    <p class="plan-description">Comprehensive cover for families.</p>
+                                </div>
+                                <div class="card-action"><span class="btn-fake">Select Plan</span></div>
+                                <div class="card-features">
+                                    <ul><li>Specialist Visits</li><li>Maternity</li></ul>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="plan-card">
+                            <input type="radio" name="plan" value="premium" data-price="1500" required>
+                            <div class="plan-card-content">
+                                <div class="card-header">
+                                    <span class="plan-name">Premium</span>
+                                    <span class="plan-price">R1,500 <span class="period">/month</span></span>
+                                    <p class="plan-description">Complete peace of mind with extensive cover.</p>
+                                </div>
+                                <div class="card-action"><span class="btn-fake">Select Plan</span></div>
+                                <div class="card-features">
+                                    <ul><li>Private Hospital</li><li>Chronic Meds</li></ul>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Your Age</label>
+                    <input type="number" id="age" name="age" min="18" max="100" placeholder="e.g. 30">
+                </div>
+
+                <div class="form-group">
+                    <label for="dependents">Number of Dependents <span>(Include children or a spouse you want on this plan)</span></label>
+                    <input type="number" id="dependents" name="dependents" min="0" max="10" placeholder="e.g. 2">
+                </div>
+
+                <div class="form-group">
+                    <label for="province">Province</label>
+                    <select id="province" name="province">
+                        <option value="" disabled selected>Select your province...</option>
+                        <option value="GP">Gauteng</option>
+                        <option value="WC">Western Cape</option>
+                        <option value="KZN">KwaZulu-Natal</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+
+        <aside class="summary-panel">
+            <div class="summary-card">
+                <h2>Your Summary</h2>
+                <ul class="summary-list">
+                    <li><span class="label">Plan:</span><span class="value" id="summary-plan">-</span></li>
+                    <li><span class="label">Age:</span><span class="value" id="summary-age">-</span></li>
+                    <li><span class="label">Province:</span><span class="value" id="summary-province">-</span></li>
+                </ul>
+                <div class="total-section hidden" id="total-section">
+                    <p class="total-label">Estimated Monthly Premium</p>
+                    <p class="total-amount" id="total-amount">R0</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
